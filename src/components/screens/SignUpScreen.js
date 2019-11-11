@@ -13,6 +13,7 @@ import {
   Modal,
   FlatList,
   Animated,
+    ScrollView,
 } from 'react-native'
 
 import { Ionicons } from '@expo/vector-icons';
@@ -33,27 +34,30 @@ const logo = require('../images/logo.png')
 
 // Default render of country flag
 const defaultFlag = data.filter(
-  obj => obj.name === 'United Kingdom'
+  obj => obj.name === 'United States'
   )[0].flag
 
 // Default render of country code
 const defaultCode = data.filter(
-  obj => obj.name === 'United Kingdom'
+  obj => obj.name === 'United States'
   )[0].dial_code
 
 export default class SignUpScreen extends React.Component {
-  state = {
-    username: '',
-    password: '',
-    email: '',
-    phoneNumber: '',
-    fadeIn: new Animated.Value(0),  // Initial value for opacity: 0
-    fadeOut: new Animated.Value(1),  // Initial value for opacity: 1
-    isHidden: false,
-    flag: defaultFlag,
-    modalVisible: false,
-    authCode: '',
-  }
+    state = {
+        username: '',
+        password: '',
+        email: '',
+        phoneNumber: '',
+        fadeIn: new Animated.Value(0),  // Initial value for opacity: 0
+        fadeOut: new Animated.Value(1),  // Initial value for opacity: 1
+        isHidden: false,
+        flag: defaultFlag,
+        modalVisible: false,
+        authCode: '',
+        name:'',
+        given_name:'',
+        address:'',
+    }
   // Get user input
   onChangeText(key, value) {
     this.setState({
@@ -116,13 +120,13 @@ export default class SignUpScreen extends React.Component {
   }
   // Sign up user with AWS Amplify Auth
   async signUp() {
-    const { username, password, email, phoneNumber } = this.state
+    const { username, password, email, phoneNumber, name, given_name, address } = this.state
     // rename variable to conform with Amplify Auth field phone attribute
     const phone_number = phoneNumber
     await Auth.signUp({
       username,
       password,
-      attributes: { email, phone_number }
+      attributes: { email, phone_number, name, given_name, address}
     })
     .then(() => {
       console.log('sign up successful!')
@@ -177,25 +181,12 @@ export default class SignUpScreen extends React.Component {
     return (
       <SafeAreaView style={styles.container}>
         <StatusBar/>
-        <KeyboardAvoidingView 
-          style={styles.container} 
-          behavior='padding' 
+        <KeyboardAvoidingView
+          style={styles.container}
+          behavior='padding'
           enabled>
           <TouchableWithoutFeedback style={styles.container} onPress={Keyboard.dismiss}>
             <View style={styles.container}>
-              {/* App Logo */}
-              <View style={styles.logoContainer}>
-                {
-                  isHidden ?
-                  <Animated.Image 
-                    source={logo} 
-                    style={{ opacity: fadeIn, width: 110.46, height: 117 }}/>
-                  :
-                  <Animated.Image 
-                    source={logo} 
-                    style={{ opacity: fadeOut, width: 110.46, height: 117 }}/>
-                }
-              </View>
               <Container style={styles.infoContainer}>
                 <View style={styles.container}>
                   {/* username section  */}
@@ -253,27 +244,84 @@ export default class SignUpScreen extends React.Component {
                       onEndEditing={() => this.fadeIn()}
                     />
                   </Item>
+                    {/* firstname section */}
+                    <Item style={styles.itemStyle}>
+                        <Ionicons name="ios-mail" style={styles.iconStyle} />
+                        <Input
+                            style={styles.input}
+                            placeholder='First Name'
+                            placeholderTextColor='#adb4bc'
+                            keyboardType={'default'}
+                            returnKeyType='next'
+                            autoCapitalize='none'
+                            autoCorrect={false}
+                            secureTextEntry={false}
+                            ref='FourthInput'
+                            onSubmitEditing={(event) => {this.refs.FifthInput._root.focus()}}
+                            onChangeText={value => this.onChangeText('name', value)}
+                            onFocus={() => this.fadeOut()}
+                            onEndEditing={() => this.fadeIn()}
+                        />
+                    </Item>
+                    {/* given name section */}
+                    <Item style={styles.itemStyle}>
+                        <Ionicons name="ios-mail" style={styles.iconStyle} />
+                        <Input
+                            style={styles.input}
+                            placeholder='Given Name'
+                            placeholderTextColor='#adb4bc'
+                            keyboardType={'default'}
+                            returnKeyType='next'
+                            autoCapitalize='none'
+                            autoCorrect={false}
+                            secureTextEntry={false}
+                            ref='FifthInput'
+                            onSubmitEditing={(event) => {this.refs.SixthInput._root.focus()}}
+                            onChangeText={value => this.onChangeText('given_name', value)}
+                            onFocus={() => this.fadeOut()}
+                            onEndEditing={() => this.fadeIn()}
+                        />
+                    </Item>
+                    {/* address section */}
+                    <Item style={styles.itemStyle}>
+                        <Ionicons name="ios-mail" style={styles.iconStyle} />
+                        <Input
+                            style={styles.input}
+                            placeholder='Address'
+                            placeholderTextColor='#adb4bc'
+                            keyboardType={'default'}
+                            returnKeyType='next'
+                            autoCapitalize='none'
+                            autoCorrect={false}
+                            secureTextEntry={false}
+                            ref='SixthInput'
+                            onSubmitEditing={(event) => {this.refs.EighthInput._root.focus()}}
+                            onChangeText={value => this.onChangeText('address', value)}
+                            onFocus={() => this.fadeOut()}
+                            onEndEditing={() => this.fadeIn()}
+                        />
+                    </Item>
                   {/* phone section  */}
                   <Item style={styles.itemStyle}>
                     <Ionicons name="ios-call" style={styles.iconStyle} />
                     {/* country flag */}
                     <View><Text style={{fontSize: 40}}>{flag}</Text></View>
                     {/* open modal */}
-                    <Ionicons 
-                      name="md-arrow-dropdown" 
+                    <Ionicons
+                      name="md-arrow-dropdown"
                       style={[styles.iconStyle, { marginLeft: 5 }]}
                       onPress={() => this.showModal()}
                     />
                     <Input
                       style={styles.input}
-                      placeholder='+44766554433'
+                      placeholder=''
                       placeholderTextColor='#adb4bc'
                       keyboardType={'phone-pad'}
                       returnKeyType='done'
                       autoCapitalize='none'
                       autoCorrect={false}
                       secureTextEntry={false}
-                      ref='FourthInput'
+                      ref='EighthInput'
                       value={this.state.phoneNumber}
                       onChangeText={(val) => {
                         if (this.state.phoneNumber===''){
@@ -299,14 +347,14 @@ export default class SignUpScreen extends React.Component {
                             keyExtractor={(item, index) => index.toString()}
                             renderItem={
                               ({ item }) =>
-                                <TouchableWithoutFeedback 
+                                <TouchableWithoutFeedback
                                   onPress={() => this.getCountry(item.name)}>
-                                  <View 
+                                  <View
                                     style={
                                       [
-                                        styles.countryStyle, 
+                                        styles.countryStyle,
                                         {
-                                          flexDirection: 'row', 
+                                          flexDirection: 'row',
                                           alignItems: 'center',
                                           justifyContent: 'space-between'
                                         }
@@ -324,7 +372,7 @@ export default class SignUpScreen extends React.Component {
                           />
                         </View>
                         <TouchableOpacity
-                          onPress={() => this.hideModal()} 
+                          onPress={() => this.hideModal()}
                           style={styles.closeButtonStyle}>
                           <Text style={styles.textStyle}>
                             Close
@@ -417,7 +465,7 @@ const styles = StyleSheet.create({
   },
   buttonStyle: {
     alignItems: 'center',
-    backgroundColor: '#b44666',
+    backgroundColor: '#000000',
     padding: 14,
     marginBottom: 10,
     borderRadius: 3,
@@ -453,7 +501,7 @@ const styles = StyleSheet.create({
   closeButtonStyle: {
     flex: 1,
     padding: 12,
-    alignItems: 'center', 
+    alignItems: 'center',
     backgroundColor: '#b44666',
   }
 })

@@ -4,19 +4,22 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "lint": "eslint --ignore-path .gitignore ."
   },
   "dependencies": {
-    "aws-amplify": "^1.1.17",
-    "aws-amplify-react-native": "^2.1.5",
-    "expo": "^31.0.2",
-    "native-base": "2.8.0",
-    "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-31.0.0.tar.gz",
+    "aws-amplify": "^1.2.4",
+    "aws-amplify-react-native": "^2.2.3",
+    "expo": "^35.0.0",
+    "native-base": "^2.13.8",
+    "react": "16.8.3",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
     "react-navigation": "2.8.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0"
+    "babel-preset-expo": "^7.0.0",
+    "eslint": "^6.6.0",
+    "eslint-plugin-react": "^7.16.0"
   },
   "private": true
 }

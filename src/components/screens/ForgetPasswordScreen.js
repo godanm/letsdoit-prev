@@ -103,10 +103,10 @@ export default class ForgetPasswordScreen extends React.Component {
     return (
       <SafeAreaView style={styles.container}>
         <StatusBar/>
-        <KeyboardAvoidingView 
-          style={styles.container} 
-          behavior='padding' 
-          enabled 
+        <KeyboardAvoidingView
+          style={styles.container}
+          behavior='padding'
+          enabled
           keyboardVerticalOffset={23}>
           <TouchableWithoutFeedback style={styles.container} onPress={Keyboard.dismiss}>
             <View style={styles.container}>
@@ -114,13 +114,13 @@ export default class ForgetPasswordScreen extends React.Component {
               <View style={styles.logoContainer}>
                 {
                   isHidden ?
-                  <Animated.Image 
-                    source={logo} 
+                  <Animated.Image
+                    source={logo}
                     style={{ opacity: fadeIn, width: 160, height: 167 }}
                   />
                   :
-                  <Animated.Image 
-                    source={logo} 
+                  <Animated.Image
+                    source={logo}
                     style={{ opacity: fadeOut, width: 160, height: 167 }}
                   />
                 }
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
   },
   buttonStyle: {
     alignItems: 'center',
-    backgroundColor: '#b44666',
+    backgroundColor: '#000000',
     padding: 14,
     marginBottom: 20,
     borderRadius: 3,

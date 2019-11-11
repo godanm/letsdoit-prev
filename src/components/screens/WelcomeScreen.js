@@ -8,7 +8,7 @@ import {
 } from 'react-native'
 
 // Load the app logo
-const logo = require('../images/logo.png')
+const logo = require('../images/questlogo.png')
 
 export default class WelcomeScreen extends React.Component {
   handleRoute = async (destination) => {
@@ -18,24 +18,24 @@ export default class WelcomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         {/* App Logo */}
-        <Image 
+        <Image
           source={logo}
-          style={{ width: 110.46, height: 117 }}
+          style={{ width: 300, height: 200 }}
         />
-        <TouchableOpacity 
+        <TouchableOpacity
           onPress={() => this.handleRoute('SignIn')}
           style={styles.buttonStyle}>
           <Text style={styles.textStyle}>Sign In</Text>
         </TouchableOpacity>
-        <TouchableOpacity 
+        <TouchableOpacity
           onPress={() => this.handleRoute('SignUp')}
           style={styles.buttonStyle}>
           <Text style={styles.textStyle}>Sign Up</Text>
         </TouchableOpacity>
-        <TouchableOpacity 
+        <TouchableOpacity
           onPress={() => this.handleRoute('ForgetPassword')}
           style={styles.buttonStyle}>
-          <Text style={styles.textStyle}>Forget password ?</Text>
+          <Text style={styles.textStyle}>Forgot password ?</Text>
         </TouchableOpacity>
       </View>
     )

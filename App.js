@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, TouchableOpacity } from 'react-native'
 
-import { 
-  createSwitchNavigator, 
+import {
+  createSwitchNavigator,
   createStackNavigator ,
   createDrawerNavigator,
   createMaterialTopTabNavigator
@@ -110,7 +110,7 @@ const AppStackNavigator = createStackNavigator({
         </TouchableOpacity>
       )
     })
-  }    
+  }
 })
 
 // App stack for the drawer
@@ -126,7 +126,7 @@ const AuthStackNavigator = createStackNavigator({
   Welcome: {
     screen: WelcomeScreen,
     navigationOptions: () => ({
-      title: `Welcome to this App`, // for the header screen
+      title: `Welcome to Appetite Quest`, // for the header screen
       headerBackTitle: 'Back'
     }),
   },

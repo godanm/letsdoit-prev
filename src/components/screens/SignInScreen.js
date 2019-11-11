@@ -25,14 +25,14 @@ import {
 import Auth from '@aws-amplify/auth'
 
 // Load the app logo
-const logo = require('../images/logo.png')
+const logo = require('../images/questlogo.png')
 
 export default class SignInScreen extends React.Component {
   state = {
     username: '',
     password: '',
     fadeIn: new Animated.Value(0),
-    fadeOut: new Animated.Value(0),  
+    fadeOut: new Animated.Value(0),
     isHidden: false
   }
   componentDidMount() {
@@ -89,20 +89,20 @@ export default class SignInScreen extends React.Component {
       <SafeAreaView style={styles.container}>
         <StatusBar/>
         <KeyboardAvoidingView style={styles.container} behavior='padding' enabled>
-          <TouchableWithoutFeedback 
-            style={styles.container} 
+          <TouchableWithoutFeedback
+            style={styles.container}
             onPress={Keyboard.dismiss}>
             <View style={styles.container}>
               {/* App Logo */}
               <View style={styles.logoContainer}>
                 {
                   isHidden ?
-                  <Animated.Image 
-                      source={logo} 
-                      style={{ opacity: fadeIn, width: 160, height: 167 }}/>
+                  <Animated.Image
+                      source={logo}
+                      style={{ opacity: fadeIn, width: 300, height: 200 }}/>
                   :
-                  <Animated.Image 
-                      source={logo} 
+                  <Animated.Image
+                      source={logo}
                       style={{ opacity: fadeOut, width: 120, height: 127 }}/>
                 }
               </View>
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
   },
   buttonStyle: {
     alignItems: 'center',
-    backgroundColor: '#b44666',
+    backgroundColor: '#000000',
     padding: 14,
     marginBottom: 20,
     borderRadius: 3,
