@@ -1,8 +1,3 @@
-# React Native Authentication App
-
-![overview](https://user-images.githubusercontent.com/26605247/54226053-e23f0280-44f4-11e9-9289-8cff19a18850.png)
-
-Complete user authentication flow for mobile applications with React Native, Expo, AWS Amplify, react-navigation, and native-base.
 
 ## Overview
 
