@@ -36,4 +36,4 @@ The technologies used in this app are the following:
 
 * [AWS Amplify CLI](https://aws-amplify.github.io/)
   * `npm install -g @aws-amplify/cli`
-  * `amplify configure` ([link](https://www.youtube.com/watch?v=fWbM5DLh25U) for a step by step video).
+  * `amplify configure` 
