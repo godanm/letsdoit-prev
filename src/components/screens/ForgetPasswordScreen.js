@@ -24,7 +24,7 @@ import {
 import Auth from '@aws-amplify/auth'
 
 // Load the app logo
-const logo = require('../images/logo.png')
+const logo = require('../images/questlogo.png')
 
 export default class ForgetPasswordScreen extends React.Component {
   state = {
@@ -116,12 +116,12 @@ export default class ForgetPasswordScreen extends React.Component {
                   isHidden ?
                   <Animated.Image
                     source={logo}
-                    style={{ opacity: fadeIn, width: 160, height: 167 }}
+                    style={{ opacity: fadeIn, width: 300, height: 200 }}
                   />
                   :
                   <Animated.Image
                     source={logo}
-                    style={{ opacity: fadeOut, width: 160, height: 167 }}
+                    style={{ opacity: fadeOut, width: 300, height: 200 }}
                   />
                 }
               </View>
@@ -205,7 +205,7 @@ export default class ForgetPasswordScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#5059ae',
+    backgroundColor: '#000000',
     justifyContent: 'center',
     flexDirection: 'column'
   },
@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 30,
-    backgroundColor: '#5059ae',
+    backgroundColor: '#000000',
   },
   itemStyle: {
     marginBottom: 20,
@@ -237,7 +237,7 @@ const styles = StyleSheet.create({
   },
   buttonStyle: {
     alignItems: 'center',
-    backgroundColor: '#000000',
+    backgroundColor: '#b44666',
     padding: 14,
     marginBottom: 20,
     borderRadius: 3,

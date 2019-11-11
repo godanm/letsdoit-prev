@@ -103,7 +103,7 @@ export default class SignInScreen extends React.Component {
                   :
                   <Animated.Image
                       source={logo}
-                      style={{ opacity: fadeOut, width: 120, height: 127 }}/>
+                      style={{ opacity: fadeOut, width: 300, height: 200 }}/>
                 }
               </View>
               <Container style={styles.infoContainer}>
@@ -159,7 +159,7 @@ export default class SignInScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#5059ae',
+    backgroundColor: '#000000',
     justifyContent: 'center',
     flexDirection: 'column'
   },
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 30,
-    backgroundColor: '#5059ae',
+    backgroundColor: '#000000',
   },
   itemStyle: {
     marginBottom: 20,
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
   },
   buttonStyle: {
     alignItems: 'center',
-    backgroundColor: '#000000',
+    backgroundColor: '#b44666',
     padding: 14,
     marginBottom: 20,
     borderRadius: 3,

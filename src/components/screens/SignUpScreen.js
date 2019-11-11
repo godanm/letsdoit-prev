@@ -246,7 +246,7 @@ export default class SignUpScreen extends React.Component {
                   </Item>
                     {/* firstname section */}
                     <Item style={styles.itemStyle}>
-                        <Ionicons name="ios-mail" style={styles.iconStyle} />
+                        <Ionicons name="ios-person" style={styles.iconStyle} />
                         <Input
                             style={styles.input}
                             placeholder='First Name'
@@ -265,7 +265,7 @@ export default class SignUpScreen extends React.Component {
                     </Item>
                     {/* given name section */}
                     <Item style={styles.itemStyle}>
-                        <Ionicons name="ios-mail" style={styles.iconStyle} />
+                        <Ionicons name="ios-person" style={styles.iconStyle} />
                         <Input
                             style={styles.input}
                             placeholder='Given Name'
@@ -284,7 +284,7 @@ export default class SignUpScreen extends React.Component {
                     </Item>
                     {/* address section */}
                     <Item style={styles.itemStyle}>
-                        <Ionicons name="ios-mail" style={styles.iconStyle} />
+                        <Ionicons name="ios-locate" style={styles.iconStyle} />
                         <Input
                             style={styles.input}
                             placeholder='Address'
@@ -433,7 +433,7 @@ export default class SignUpScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#5059ae',
+    backgroundColor: '#000000',
     justifyContent: 'center',
     flexDirection: 'column'
   },
@@ -453,7 +453,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 30,
-    backgroundColor: '#5059ae',
+    backgroundColor: '#000000',
   },
   itemStyle: {
     marginBottom: 10,
@@ -465,7 +465,7 @@ const styles = StyleSheet.create({
   },
   buttonStyle: {
     alignItems: 'center',
-    backgroundColor: '#000000',
+    backgroundColor: '#b44666',
     padding: 14,
     marginBottom: 10,
     borderRadius: 3,
