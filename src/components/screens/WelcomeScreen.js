@@ -50,12 +50,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   buttonStyle: {
-    padding: 20,
+    padding: 15,
   },
   textStyle: {
     fontWeight: 'bold',
     fontSize: 18,
     padding: 10,
-    color: '#fff'
+    color: '#E15A46'
   }
 })
