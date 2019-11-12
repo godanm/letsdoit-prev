@@ -9,7 +9,8 @@ import {
   KeyboardAvoidingView,
   Keyboard,
   View,
-  Alert
+  Alert,
+    Image,
 } from 'react-native'
 
 import {
@@ -19,6 +20,8 @@ import {
 } from 'native-base'
 
 import { Ionicons } from '@expo/vector-icons';
+import styles from '../../assets/css/styles'
+const logo = require('../images/questlogo.png')
 
 // AWS Amplify modular import
 import Auth from '@aws-amplify/auth'
@@ -75,6 +78,15 @@ export default class SettingsScreen extends React.Component {
     return (
       <SafeAreaView style={styles.container}>
         <StatusBar/>
+          <View style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+          }}>
+              <Image
+                  source={logo}
+                  style={{ width: 300, height: 200 }}
+              />
+          </View>
         <KeyboardAvoidingView style={styles.container} behavior='padding' enabled>
           <TouchableWithoutFeedback style={styles.container} onPress={Keyboard.dismiss}>
             <View style={styles.container}>
@@ -82,7 +94,7 @@ export default class SettingsScreen extends React.Component {
               <Container style={styles.infoContainer}>
                 <View style={styles.container}>
                   <View style={[styles.buttonStyle, {borderRadius: 4, marginBottom: 20}]}>
-                    <Text style={styles.buttonText}>Change password</Text>              
+                    <Text style={styles.buttonText}>Change password</Text>
                   </View>
                   {/* Old password */}
                   <Item style={styles.itemStyle}>
@@ -98,8 +110,8 @@ export default class SettingsScreen extends React.Component {
                       onSubmitEditing={(event) => { this.refs.SecondInput._root.focus() }}
                       onChangeText={value => this.onChangeText('password1', value)}
                     />
-                  </Item>    
-                  {/* New password */}              
+                  </Item>
+                  {/* New password */}
                   <Item style={styles.itemStyle}>
                     <Ionicons style={styles.iconStyle} name="ios-lock" />
                     <Input
@@ -121,13 +133,13 @@ export default class SettingsScreen extends React.Component {
                       Submit
                     </Text>
                   </TouchableOpacity>
-                  <View 
+                  <View
                     style={{justifyContent: 'center', alignItems: 'center', marginBottom: 100}}/>
                   <TouchableOpacity
                     style={[styles.buttonStyle, {flexDirection: 'row', justifyContent: 'center'}]}
                     onPress={this.signOutAlert}>
-                    <Ionicons 
-                      name="md-power" 
+                    <Ionicons
+                      name="md-power"
                       style={{color: '#fff', marginRight: 10, fontSize: 24}}
                     />
                     <Text style={styles.buttonText}>
@@ -144,48 +156,3 @@ export default class SettingsScreen extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#5059ae',
-    justifyContent: 'center',
-    flexDirection: 'column'
-  },
-  input: {
-    flex: 1,
-    fontSize: 17,
-    fontWeight: 'bold',
-    color: '#fff',
-  },
-  infoContainer: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    height: 600,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 30,
-    backgroundColor: '#5059ae',
-  },
-  itemStyle: {
-    marginTop: 20,
-  },
-  iconStyle: {
-    color: '#fff',
-    fontSize: 28,
-    marginRight: 15
-  },
-  buttonStyle: {
-    alignItems: 'center',
-    backgroundColor: '#b44666',
-    padding: 14,
-    marginTop: 20,
-    borderRadius: 3,
-  },
-  buttonText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: "#fff",
-  },
-})

@@ -1,12 +1,15 @@
 import React from 'react'
 import {
-  StyleSheet,
-  View,
-  ActivityIndicator,
+    StyleSheet,
+    View,
+    ActivityIndicator,
+    Image, Alert,
 } from 'react-native'
 
 // AWS Amplify modular import
 import Auth from '@aws-amplify/auth'
+const logo = require('../images/questlogo.png')
+
 
 export default class AuthLoadingScreen extends React.Component {
   state = {
@@ -20,13 +23,19 @@ export default class AuthLoadingScreen extends React.Component {
     await Auth.currentAuthenticatedUser()
     .then(user => {
       this.setState({userToken: user.signInUserSession.accessToken.jwtToken})
+        this.setState({currentUser: user})
     })
     .catch(err => console.log(err))
-    this.props.navigation.navigate(this.state.userToken ? 'App' : 'Auth')
+      this.props.navigation.navigate(this.state.userToken ? 'App' : 'Auth')
   }
   render() {
-    return (
-      <View style={styles.container}> 
+      console.log('GODAN AUTH SCREEN', this.state)
+      return (
+          <View style={styles.container}>
+          <Image
+              source={logo}
+              style={{ width: 300, height: 200 }}
+          />
         <ActivityIndicator size="large" color="#fff" />
       </View>
     )

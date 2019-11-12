@@ -70,7 +70,7 @@ const options = {
     activeTintColor: '#fff',
     inactiveTintColor: '#fff9',
     style: {
-      backgroundColor: '#f16f69',
+      backgroundColor: '#000000',
     },
     labelStyle: {
       fontSize: 12,
