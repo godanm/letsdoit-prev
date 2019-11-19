@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7b48db52-3c1a-4935-b61e-118fa3a85cbc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/App.js" afterPath="$PROJECT_DIR$/App.js" />
-      <change beforePath="$PROJECT_DIR$/app.json" afterPath="$PROJECT_DIR$/app.json" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/AuthLoadingScreen.js" afterPath="$PROJECT_DIR$/src/components/screens/AuthLoadingScreen.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/HomeScreen.js" afterPath="$PROJECT_DIR$/src/components/screens/HomeScreen.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/ProfileScreen.js" afterPath="$PROJECT_DIR$/src/components/screens/ProfileScreen.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/SignUpScreen.js" afterPath="$PROJECT_DIR$/src/components/screens/SignUpScreen.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -352,7 +344,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96579000" />
+    <option name="totallyTimeSpent" value="96603000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1639" height="1027" extended-state="0" />
