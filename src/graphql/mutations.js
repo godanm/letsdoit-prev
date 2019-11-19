@@ -15,6 +15,7 @@ export const createActivity = `mutation CreateActivity($input: CreateActivityInp
       tripend
       thumpbnails
       status
+      remarks
     }
     activityname
     description
@@ -52,6 +53,7 @@ export const updateActivity = `mutation UpdateActivity($input: UpdateActivityInp
       tripend
       thumpbnails
       status
+      remarks
     }
     activityname
     description
@@ -89,6 +91,7 @@ export const deleteActivity = `mutation DeleteActivity($input: DeleteActivityInp
       tripend
       thumpbnails
       status
+      remarks
     }
     activityname
     description
@@ -134,6 +137,7 @@ export const createTrip = `mutation CreateTrip($input: CreateTripInput!) {
     tripend
     thumpbnails
     status
+    remarks
   }
 }
 `;
@@ -159,6 +163,7 @@ export const updateTrip = `mutation UpdateTrip($input: UpdateTripInput!) {
     tripend
     thumpbnails
     status
+    remarks
   }
 }
 `;
@@ -184,6 +189,7 @@ export const deleteTrip = `mutation DeleteTrip($input: DeleteTripInput!) {
     tripend
     thumpbnails
     status
+    remarks
   }
 }
 `;

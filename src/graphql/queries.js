@@ -15,6 +15,7 @@ export const getActivity = `query GetActivity($id: ID!) {
       tripend
       thumpbnails
       status
+      remarks
     }
     activityname
     description
@@ -53,6 +54,7 @@ export const listActivitys = `query ListActivitys(
         tripend
         thumpbnails
         status
+        remarks
       }
       activityname
       description
@@ -95,6 +97,7 @@ export const getTrip = `query GetTrip($id: ID!) {
     tripend
     thumpbnails
     status
+    remarks
   }
 }
 `;
@@ -115,6 +118,7 @@ export const listTrips = `query ListTrips(
       tripend
       thumpbnails
       status
+      remarks
     }
     nextToken
   }

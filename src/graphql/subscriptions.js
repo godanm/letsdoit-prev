@@ -15,6 +15,7 @@ export const onCreateActivity = `subscription OnCreateActivity {
       tripend
       thumpbnails
       status
+      remarks
     }
     activityname
     description
@@ -52,6 +53,7 @@ export const onUpdateActivity = `subscription OnUpdateActivity {
       tripend
       thumpbnails
       status
+      remarks
     }
     activityname
     description
@@ -89,6 +91,7 @@ export const onDeleteActivity = `subscription OnDeleteActivity {
       tripend
       thumpbnails
       status
+      remarks
     }
     activityname
     description
@@ -134,6 +137,7 @@ export const onCreateTrip = `subscription OnCreateTrip {
     tripend
     thumpbnails
     status
+    remarks
   }
 }
 `;
@@ -159,6 +163,7 @@ export const onUpdateTrip = `subscription OnUpdateTrip {
     tripend
     thumpbnails
     status
+    remarks
   }
 }
 `;
@@ -184,6 +189,7 @@ export const onDeleteTrip = `subscription OnDeleteTrip {
     tripend
     thumpbnails
     status
+    remarks
   }
 }
 `;
