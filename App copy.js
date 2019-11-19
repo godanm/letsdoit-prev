@@ -17,9 +17,6 @@ import WelcomeScreen from './src/components/screens/WelcomeScreen'
 import SignUpScreen from './src/components/screens/SignUpScreen'
 import SignInScreen from './src/components/screens/SignInScreen'
 import ForgetPasswordScreen from './src/components/screens/ForgetPasswordScreen'
-import MyGroups from './src/components/screens/MyGroups'
-import MyToDos from './src/components/screens/MyToDos'
-import MyTrips from './src/components/screens/MyTrips'
 
 // App stack screen imports
 import HomeScreen from './src/components/screens/HomeScreen'
@@ -34,17 +31,17 @@ Amplify.configure(config)
 
 // Configurations and options for the AppTabNavigator
 const configurations = {
-    Groups: {
-        screen: MyGroups,
+    MyGroups: {
+        screen: SettingsScreen,
         navigationOptions: {
             tabBarLabel: 'My Groups',
             tabBarIcon: ({ tintColor }) => (
-                <Ionicons style={{fontSize: 26, color: tintColor}} name="ios-people" />
+                <Ionicons style={{fontSize: 26, color: tintColor}} name="ios-settings" />
             )
         }
     },
-    Trips: {
-        screen: MyTrips,
+    MyTrips: {
+        screen: SettingsScreen,
         navigationOptions: {
             tabBarLabel: 'My Trips',
             tabBarIcon: ({ tintColor }) => (
@@ -52,8 +49,8 @@ const configurations = {
             )
         }
     },
-    Tasks: {
-        screen: MyToDos,
+    MyToDos: {
+        screen: SettingsScreen,
         navigationOptions: {
             tabBarLabel: 'My To Dos',
             tabBarIcon: ({ tintColor }) => (
@@ -121,12 +118,7 @@ const AppStackNavigator = createStackNavigator({
 // App stack for the drawer
 const AppDrawerNavigator = createDrawerNavigator({
     Tabs: AppStackNavigator, // defined above
-    Home: {
-        screen: HomeScreen,
-        navigationOptions: () => ({
-            title: `Home=1`,
-        }),
-    },
+    Home: HomeScreen,
     Profile: ProfileScreen,
     Settings: SettingsScreen
 })
@@ -159,9 +151,11 @@ const AuthStackNavigator = createStackNavigator({
         }),
     },
 })
-const rootStack = createSwitchNavigator({
+export default createSwitchNavigator({
+    Authloading: AuthLoadingScreen,
+    Auth: AuthStackNavigator, // the Auth stack
     App: AppDrawerNavigator, // the App stack
 })
 
 
-export default createAppContainer(rootStack)
+

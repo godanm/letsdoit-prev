@@ -12,10 +12,11 @@ const logo = require('../images/questlogo.png')
 
 
 export default class AuthLoadingScreen extends React.Component {
-  state = {
+    state = {
     userToken: null
   }
-  async componentDidMount () {
+    naviga
+    async componentDidMount () {
     await this.loadApp()
   }
   // Get the logged in users and remember them
@@ -29,7 +30,6 @@ export default class AuthLoadingScreen extends React.Component {
       this.props.navigation.navigate(this.state.userToken ? 'App' : 'Auth')
   }
   render() {
-      console.log('GODAN AUTH SCREEN', this.state)
       return (
           <View style={styles.container}>
           <Image

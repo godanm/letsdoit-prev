@@ -1,0 +1,2 @@
+update the graphql schema, you can edit amplify/backend/api/schema.graphql and run amplify api push
+amplify api gql-compile -- Re-generate the schema anytime there's a change

@@ -1,0 +1,43 @@
+scalar AWSDate
+type Activity @model {
+    id: ID!
+    tripid: Trip
+    activityname: String!
+    description: String!
+    title: String!
+    location: String!
+    cost: Float
+    status: Boolean!
+    todos: [ToDo]
+}
+type Trip @model {
+    id: ID!
+    groupid: Group
+    tripdestination: String!
+    tripstart: AWSDate!
+    tripend: AWSDate!
+    thumpbnails: [String]
+    status: Boolean!
+    remarks: String
+}
+type Group @model {
+    id: ID!
+    groupname: String!
+    groupmembers: [Users]
+    groupadmins: [Users]
+}
+type Users @model {
+    id: ID!
+    username: String!
+    phone: String!
+}
+
+type ToDo @model {
+    id: ID!
+    title: String!
+    description: String!
+    duedate: AWSDate!
+    startdate: AWSDate!
+    status: Boolean!
+    owners: [Users]
+}

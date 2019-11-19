@@ -18,9 +18,14 @@ async function createNewEntry() {
 
     try {
         const entry2 = {
-            groupname: "Amex hiking group"
+            tripdestination: "Yosemite falls",
+            tripstart: "2020-06-04",
+            tripend: "2020-06-08",
+            thumpbnails: "https://static.greatbigcanvas.com/images/square/robert-harding-world-imagery/upper-and-lower-yosemite-falls-california,2319379.jpg?max=128",
+            status: true
+
         }
-        await API.graphql(graphqlOperation(createGroup, {input: entry2}))
+        await API.graphql(graphqlOperation(createTrip, {input: entry2}))
         console.log("SUCCESS")
     }
     catch (err) {

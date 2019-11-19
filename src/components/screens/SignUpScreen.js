@@ -57,7 +57,6 @@ export default class SignUpScreen extends React.Component {
         authCode: '',
         name:'',
         given_name:'',
-        address:'',
     }
   // Get user input
   onChangeText(key, value) {
@@ -121,13 +120,13 @@ export default class SignUpScreen extends React.Component {
   }
   // Sign up user with AWS Amplify Auth
   async signUp() {
-    const { username, password, email, phoneNumber, name, given_name, address } = this.state
+    const { username, password, email, phoneNumber, name, given_name} = this.state
     // rename variable to conform with Amplify Auth field phone attribute
     const phone_number = phoneNumber
     await Auth.signUp({
       username,
       password,
-      attributes: { email, phone_number, name, given_name, address}
+      attributes: { email, phone_number, name, given_name}
     })
     .then(() => {
       console.log('sign up successful!')
@@ -279,25 +278,6 @@ export default class SignUpScreen extends React.Component {
                             ref='FifthInput'
                             onSubmitEditing={(event) => {this.refs.SixthInput._root.focus()}}
                             onChangeText={value => this.onChangeText('given_name', value)}
-                            onFocus={() => this.fadeOut()}
-                            onEndEditing={() => this.fadeIn()}
-                        />
-                    </Item>
-                    {/* address section */}
-                    <Item style={styles.itemStyle}>
-                        <Ionicons name="ios-locate" style={styles.iconStyle} />
-                        <Input
-                            style={styles.input}
-                            placeholder='Address'
-                            placeholderTextColor='#adb4bc'
-                            keyboardType={'default'}
-                            returnKeyType='next'
-                            autoCapitalize='none'
-                            autoCorrect={false}
-                            secureTextEntry={false}
-                            ref='SixthInput'
-                            onSubmitEditing={(event) => {this.refs.EighthInput._root.focus()}}
-                            onChangeText={value => this.onChangeText('address', value)}
                             onFocus={() => this.fadeOut()}
                             onEndEditing={() => this.fadeIn()}
                         />

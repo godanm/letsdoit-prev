@@ -8,7 +8,6 @@ import Auth from '@aws-amplify/auth'
 
 export default class ProfileScreen extends React.Component {
     render() {
-        console.log('GODAN PROFILE SCREEN', this.state)
         return (
             <ScrollView style={{
                 backgroundColor: '#000000',
@@ -17,11 +16,11 @@ export default class ProfileScreen extends React.Component {
                     justifyContent: 'center',
                     alignItems: 'center',
                 }}>
-             <Image
-                    source={logo}
-                    style={{ width: 300, height: 200 }}
-                />
-            </View>
+                  <Image
+                        source={logo}
+                        style={{ width: 300, height: 200 }}
+                    />
+             </View>
             <View style={styles.container}>
                 <List>
                     <ListItem

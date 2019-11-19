@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Appetite Quest",
-    "slug": "appetitequest",
+    "name": "Let's do It!",
+    "slug": "letsdoit",
     "privacy": "public",
     "sdkVersion": "35.0.0",
     "platforms": [
@@ -22,6 +22,7 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": ""
   }
 }
